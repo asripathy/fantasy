@@ -1,0 +1,174 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    font-family: Calibri;
+}
+
+#menu{
+    background-color: #7D1935;
+}
+
+#menu h1 a,visited{
+    padding: 18px;
+	color: #FFFFFF;
+}
+
+#menu_wrapper{
+    width: 960px;
+    margin: 0 auto;
+    text-align: right;
+    position: relative;
+    z-index: 40;
+}
+
+#menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-size: 22px;
+}
+
+#menu ul li{
+    display: inline-block;
+}
+
+#menu ul li:hover{
+    background-color: #4A96AD;
+}
+
+#menu ul li a,visited{
+    color: #F5F3EE;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+#menu ul li:hover ul{
+    display: block;
+}
+#menu ul ul{
+    display: none;
+    position: absolute;
+    background-color: #4A96AD;
+    border: 5px solid #7D1935;
+    border-top: 0;
+    margin-left: -5px;
+}
+#menu ul ul li{
+    display: block;
+    text-align: left;
+}
+
+#menu ul ul li a:hover{
+    color:#2E2EFE;
+}
+
+.slideshow{
+  position: relative;
+  width: 100%;
+  height: 435px;
+  border-bottom: 1px solid #ddd;
+  background-color: #4A96AD;
+  overflow: hidden;
+  
+ 
+}
+
+
+.slideText{
+    width: 630px;
+    font-size: 20px;
+    margin-left: 230px;
+    padding: 0px;
+    position: absolute;
+    color: #F5F3EE;
+    background-color: #7D1935;
+}
+
+.slideText h2{
+    margin: 0px 0px 0px 0px; 
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+}
+
+.slideText p{   
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 5px 5px;
+    text-align: center;
+}
+
+
+.slideImage{
+   position: relative;
+   margin-left: 230px;
+}
+
+.slide {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.active{
+    display: block;
+}
+.navBar > div{
+    display: inline-block;
+    padding: 10px;
+}
+
+.navBar{
+    margin-left: 460px;
+}
+    
+.slider-dots {
+  list-style: none;
+  display: inline-block;
+  padding-left: 40;
+  margin-bottom: 0;
+}
+
+.slider-dots li {
+  color: #bbbcbc;
+  display: inline;
+  font-size: 30px;
+  margin-right: 15px;
+}
+
+.slider-dots li.active-dot {
+  color: #363636;
+}
+
+.prevArrow{
+	position: absolute;
+	margin-left: 227px;
+	margin-top: 120px;
+	z-index: 999;
+	opacity: 0.7;
+}
+
+.nextArrow{
+	position: absolute;
+	margin-left: 800px;
+	margin-top: 120px;
+	z-index: 998;
+	opacity: 0.7;
+}
+
+.prevArrow:hover{
+	opacity: 1.0;
+}
+
+.nextArrow:hover{
+	opacity: 1.0;
+}
+
+
+    
+    
+
