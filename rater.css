@@ -1,0 +1,132 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    font-family: Calibri;
+}
+
+#menu{
+    background-color: #7D1935;
+}
+
+#menu h1 a,visited{
+    padding: 18px;
+	color: #FFFFFF;
+}
+
+#menu_wrapper{
+    width: 960px;
+    margin: 0 auto;
+    text-align: right;
+    position: relative;
+    z-index: 40;
+}
+
+#menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-size: 22px;
+}
+
+#menu ul li{
+    display: inline-block;
+}
+
+#menu ul li:hover{
+    background-color: #4A96AD;
+}
+
+#menu ul li a,visited{
+    color: #F5F3EE;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+#menu ul li:hover ul{
+    display: block;
+}
+#menu ul ul{
+    display: none;
+    position: absolute;
+    background-color: #4A96AD;
+    border: 5px solid #7D1935;
+    border-top: 0;
+    margin-left: -5px;
+}
+#menu ul ul li{
+    display: block;
+    text-align: left;
+}
+
+#menu ul ul li a:hover{
+    color:#2E2EFE;
+}
+#rankingsHeader{
+	margin-left: 75px;
+}
+
+#rankingsHeader div{
+	display: inline-block;
+	border-radius: 5px;
+	border: 2px solid #6495ED;
+	background-color: #BCD2EE;
+	height: 20px;
+	width: 40px;
+	margin: auto;
+	text-align: center;
+}
+
+#form{
+	margin-left: 50px;
+}
+h2{
+	margin-left: 50px;
+}
+#p1, #p2, #p3, #p4, #p5, #p6{
+	margin-left: 50px;
+}
+
+#positionList p{
+	display: inline;
+	margin-left: 77px;
+}
+form{
+	margin-left: 50px;
+}
+
+#rateTeam{
+	position: relative;
+	margin-top: 50px;
+	margin-left: -690px;
+	border-radius: 50px;
+	font-size: 15px;
+}
+
+.selected{
+	background-color: #96CDCD;
+}
+
+ul{
+	list-style-type: none;
+	
+}
+
+.settingsComplete{
+	display: none;
+}
+.positionReview{
+	display: none;
+}
+
+.activeReview{
+	display: block;
+	margin-left: 50px;
+}
+
+
+
+
+

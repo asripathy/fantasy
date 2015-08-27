@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link type = "text/css" rel="stylesheet" href= 		"style.css"/>
+		<link type = "text/css" rel="stylesheet" href= 		"rater.css"/>
 		
 		
 	 
@@ -39,10 +39,273 @@
             </ul>
         </div>
     </div>
+	<div id = "settings">
+	<h2 id = "header1"> Enter Players Here </h2>
+	<ul style="width: 135px;" id="p1"></ul>
+	<ul style="width: 135px;" id="p2"></ul>
+	<ul style="width: 135px;" id="p3"></ul>
+	<ul style="width: 135px;" id="p4"></ul>
+	<ul style="width: 135px;" id="p5"></ul>
+	<ul style="width: 135px;" id="p6"></ul>
 	<form id="form">
-	    <input type="text" id="userInput"  />	
-		<input type="submit" onclick = "returnInput();" />
+	    <input type="text" id="userInput"  />
+		<button type="button" >Submit</button>	
+		
+		<script>
+		var container = new player();
+		function orderRank(array) {
+			for(var i = 0; i < array.length; i++){
+				minPosition = i;
+				for(var k = i+1; k < array.length; k++){
+					if(array[minPosition].rank > array[k].rank){
+						minPosition = k;
+					}		
+				}
+				
+				container.rank = array[i].rank;
+				container.name = array[i].name;
+				array[i].rank = array[minPosition].rank;
+				array[i].name = array[minPosition].name;
+				array[minPosition].name = container.name;
+				array[minPosition].rank = container.rank;
+			}
+	
+		}
+		$("input:text").change(function() {
+		    var value=$("input:text").val();
+			for(var i = 0; i < qbArray.length; i++){
+				if(value === qbName[i]){
+					AddTextQ(qbName[i]);
+					myQB.push(qbArray[i]);
+					orderRank(myQB);
+				}
+				else if(value === rbName[i]){
+					AddTextR(rbName[i]);
+					myRB.push(rbArray[i]);
+					orderRank(myRB);
+				}
+				else if(value === wrName[i]){
+					AddTextW(wrName[i]);
+					myWR.push(wrArray[i]);
+					orderRank(myWR);
+				}
+				else if(value === teName[i]){
+					AddTextT(teName[i]);
+					myTE.push(teArray[i]);
+					orderRank(myTE);
+				}
+				else if(value === kName[i]){
+					AddTextK(kName[i]);
+					myK.push(kArray[i]);
+					orderRank(myK);
+				}
+				else if(value === dName[i]){
+					AddTextD(dName[i]);
+					myD.push(dArray[i]);
+					orderRank(myD);
+				}
+				
+			}
+		});
+		function AddTextQ(value) {
+ 		   var listNode = document.createElement("li");
+ 		   var node = document.createTextNode(" " + value);
+ 		   listNode.appendChild(node);
+ 		   document.getElementById("p1").appendChild(listNode);
+		}
+		function AddTextR(value) {
+		   var listNode = document.createElement("li");
+		   var node = document.createTextNode(" " + value);
+		   listNode.appendChild(node);
+		   document.getElementById("p2").appendChild(listNode);
+		}
+		function AddTextW(value) {
+ 		   var listNode = document.createElement("li");
+ 		   var node = document.createTextNode(" " + value);
+ 		   listNode.appendChild(node);
+ 		   document.getElementById("p3").appendChild(listNode);
+		}
+		function AddTextT(value) {
+ 		   var listNode = document.createElement("li");
+ 		   var node = document.createTextNode(" " + value);
+ 		   listNode.appendChild(node);
+ 		   document.getElementById("p4").appendChild(listNode);
+		}
+		function AddTextK(value) {
+ 		   var listNode = document.createElement("li");
+ 		   var node = document.createTextNode(" " + value);
+ 		   listNode.appendChild(node);
+ 		   document.getElementById("p5").appendChild(listNode);
+		}
+		function AddTextD(value) {
+ 		   var listNode = document.createElement("li");
+ 		   var node = document.createTextNode(" " + value);
+ 		   listNode.appendChild(node);
+ 		   document.getElementById("p6").appendChild(listNode);
+		}
+		
+			
+		</script>
+		
 	</form>
+		
+	
+	<h2> Choose # of Teams </h2>
+	<div id = "rankingsHeader">
+		<button type="button" id = "team8">8</button>
+		<button type="button" id = "team10">10</button>
+		<button type="button" id = "team12" class = "selected">12</button>
+		<button type="button" id = "team14">14</button>
+	</div>
+	<h2> Choose Roster Positions </h2>
+	<div id = "positionList">
+		<p> QB </p>
+		<p> RB </p>
+		<p> WR </p>
+		<p> TE </p>
+		<p> Flex </p>
+		<p> DST </p>
+		<p> K </p>
+	</div>
+	<script>
+		function changeWRCount(){
+			wrCount = document.getElementById("wrCount").value;
+		}
+		function changeRBCount(){
+			rbCount = document.getElementById("rbCount").value;
+		}
+		function changeQBCount(){
+			qbCount = document.getElementById("qbCount").value;
+		}
+		function changeTECount(){
+			teCount = document.getElementById("teCount").value;
+		}
+		function changeFLCount(){
+			flexCount = document.getElementById("flexCount").value;
+		}
+		function changeDCount(){
+			dCount = document.getElementById("dCount").value;
+		}
+		function changeKCount(){
+			kCount = document.getElementById("kCount").value;
+		}
+		
+	
+	
+	</script>		
+	<form>
+		
+		<select id="qbCount" name="qbCount" onchange="changeQBCount()" style="width:100px;float:left" >
+			<option value="1" selected='selected'>1</option>
+			<option value="2" >2</option>
+			<option value="3" >3</option>
+			<option value="4">4</option>
+		</select>
+	</form>
+	<form>
+		
+		<select id="rbCount" name="rbCount" onchange="changeRBCount()" style="width:100px;float:left" >
+			<option value="1" >1</option>
+			<option value="2" selected='selected'>2</option>
+			<option value="3" >3</option>
+			<option value="4">4</option>
+		</select>
+	</form>
+		
+	<form>
+		
+		<select id="wrCount" name="wrCount" onchange="changeWRCount()" style="width:100px;float:left" >
+			<option value="1" >1</option>
+			<option value="2" selected='selected'>2</option>
+			<option value="3" >3</option>
+			<option value="4">4</option>  
+		</select>
+	</form>
+	
+	
+	<form>
+		<select id="teCount" name="teCount" onchange="changeTECount()" style="width:100px;float:left" >
+			<option value="1" selected='selected'>1</option>
+			<option value="2" >2</option>
+			<option value="3" >3</option>
+			<option value="4">4</option>
+		</select>
+	</form>
+	<form>
+		<select id="teCount" name="flexCount" onchange="changeFLCount()" style="width:100px;float:left" >
+			<option value = "0"> 0 </option>
+			<option value="1" selected='selected'>1</option>
+			<option value="2" >2</option>
+			<option value="3" >3</option>
+			<option value="4">4</option>
+		</select>
+	</form>
+	<form>
+		<select id="dCount" name="dCount" onchange="changeDCount()" style="width:100px;float:left" >
+			<option value="1" selected='selected'>1</option>
+			<option value="2" >2</option>
+			<option value="3" >3</option>
+			<option value="4">4</option>
+		</select>
+	</form>
+	<form>
+		<select id="kCount" name="kCount" onchange="changeKCount()" style="width:100px;float:left" >
+			<option value="1" selected='selected'>1</option>
+			<option value="2" >2</option>
+			<option value="3" >3</option>
+			<option value="4">4</option>
+		</select>
+	</form>
+	<button type = "button" id = "rateTeam"> Rate my team </button>
+	</div>	
+	<!-- Team Outlook -->
+	<h2 class = "positionReview" id = "teamReview0"> Team Overview </h2>
+	<p class = "positionReview" id = "teamReview1"> You have assembled a very impressive group of players here. Kudos to you. We believe this team has an excellent chance at not only making the playoffs, but also capturing the championship this year. Consider this team a bona-fide contender. Below is a detailed look at each of your position groups. </p>
+	<p class = "positionReview" id = "teamReview2"> This team has its strenghts, but it does have several noticeable weaknesses as well. We consider this team to be right in the middle of the pack. This is far from a final verdict however, as shrewd in-season management and quality trades should be able to push ths unit into the elite tier of teams. Below we have provided a thorough analysis of each of your position groups. </p>
+	<p class = "positionReview" id = "teamReview3"> While this team shows promise, it is unfortunately missing several key components, meaning a playoff berth might prove difficult to accomplish. While there are several encouraging pieces in this unit, as a whole, your starting lineup isn't too imposing. Keep a look out on the waiver wire for potential impact acquisitions. Upside is the name of the game. Through a combination of good inseason management, and quality trades, this team might be able to beat the odds. Below is an in-depth look at each of your position groups. </p>
+	<!-- QB Position Group -->
+	<h2 class = "positionReview" id = "qbReview0"> Quarterback </h2>
+	<p class = "positionReview" id = "qbReview1"> You have excellent depth at the Quarterback position. Your QB's should dominate this league. With <span class = "playerNameQ"></span> as your QB<span class = "playerPositionQ"></span> it is very plausible that you can leave him in your starting lineup every week. He is currently ranked as the #<span class = "playerRankQ"></span> overall quarterback. </p>
+	<p class = "positionReview" id = "qbReview2"> Quarterback should be a position of strength for you. We love the selection of <span class = "playerNameQ"></span> to serve as your QB<span class = "playerPositionQ"></span>. Expect him to provide solid production every week. </p>
+	<p class = "positionReview" id = "qbReview3"> Overall your starting quarterback(s) are slightly below average. This is not a season-killer however, because having quality depth at running back and receiver is far more important than having an elite QB. You can expect reasonable production on a weekly basis. Your decision to roll with <span class = "playerNameQ"></span> as your QB<span class = "playerPositionQ"></span> should prove to be manageable. Our projections have him as the #<span class = "playerRankQ"></span> overall quarterback. </p>
+	<p class = "positionReview" id = "qbReview4"> Quarterback might prove to be a liability for you. While the position overall is relatively stable, your weekly ceiling at this position should prove limited. Hopefully you have enough depth in other core position groups to offset this lack of talent. <span class = "playerNameQ"></span> should be a passable QB<span class = "playerPositionQ"></span>, however, it wouldn't be a bad idea to roster a backup here. </p>
+	<p class = "positionReview" id = "qbReview5"> Should your starters underperform, you seem to have capable backup(s) here. Playing the matchup could prove to be a viable strategy if you aren't convinced about your starter. </p>
+	<p class = "positionReview" id = "qbReview6"> The lack of depth here is concerning. Keep an eye on the waiver wire, as many solid backups often go undrafted.  </p>
+	<!-- RB Position Group -->
+		<h2 class = "positionReview" id = "rbReview0"> Running Back </h2>
+		<p class = "positionReview" id = "rbReview1"> You are stacked at the running back position. Congratulations! You have assembled a very impressive group of ball-carriers. This position group should be a real strength for you throughout the season. Based on our projections all your projected starteres are more than qualified to carry the load on a weekly basis. We are especially thrilled about the presence of <span class = "playerNameR"></span> as your RB<span class = "playerPositionR"></span>. In an already strong group, he should be a real difference maker. We have him currently ranked as the #<span class = "playerRankR"></span> overall running back. </p>
+		<p class = "positionReview" id = "rbReview2"> Overall you have a really nice group of running backs here. We expect all your starters to be at or above average, a positive sign given the importance of this position. We are really high on <span class = "playerNameR"></span> as your RB<span class = "playerPositionR"></span> as he should have no problem putting up big numbers. We project him to finish as the #<span class = "playerRankR"></span> overall running back. </p>
+		<p class = "positionReview" id = "rbReview3"> As a unit, your running backs are a tad below average. However, strenghts at other core position groups should help lessen the consequences of this. Expect decent production on a weekly basis. Out of all your running backs, we expect <span class = "playerNameR"></span> to give you good production. As your RB<span class = "playerPositionR"></span> he should be solid. We expect him to finish the season as the #<span class = "playerRankR"></span> overall running back. </p>
+		<p class = "positionReview" id = "rbReview4"> Your running backs will not win you this league. There are significant holes in your starting lineup, which could jeopardize your season-long success. If you believe that you hold significant advantages in other position groups, this might be a survivable weakness. Needless to say, keep an eye out for potential high-upside fliers. We really love some of the rookie RB's. <span class = "playerNameR"></span>, who is your projected RB<span class = "playerPositionR"></span>, could help give consistent production. He is expected to finish the season as the #<span class = "playerRankR"></span> overall running back. </p>
+		<p class = "positionReview" id = "rbReview5"> Your reserves appear to be solid. You clearly have managed to accumulate good depth behind your starting running back group. </p>
+		<p class = "positionReview" id = "rbReview6"> Your reserves look like they could use some help. We aren't convinced they could carry the load should one of your starters go down.</p>
+		<p class = "positionReview" id = "rbReview7"> We believe <span class = "flexName"></span> should serve as a solid flex option for your team. Our projections indicate that he offers the best upside at this position out of all your other options.  </p>
+<!-- WR Position Group -->
+	<h2 class = "positionReview" id = "wrReview0"> Wide Receiver </h2>	
+	<p class = "positionReview" id = "wrReview1"> As a group, your starting Wide Receivers are phenomenal. In fact, we believe it will be a major contributing factor to your success in fantasy this season. Our projections indicate that your starting WRs are all excellent weekly options, and this position should give you very little trouble as the season unfolds. The presence of <span class = "playerName"></span> as your WR<span class = "playerPosition"></span> will be a real asset to this team, as we believe he will finish the season as the #<span class = "playerRank"></span> overall wide receiver. </p>
+	<p class = "positionReview" id = "wrReview2"> As a group, your starting Wide Receivers should be above average. We believe this position group should be a source of strength for your lineup. Our projections indicate that your starters are all more than capable of matching if not outscoring your opponents receivers on a weekly basis. We really love the selection of <span class = "playerName"></span> as your WR<span class = "playerPosition"></span> as he appears to give you the best weekly advantage. Our rankings have him finishing the season as the #<span class = "playerRank"></span> overall wide receiver. </p>
+	<p class = "positionReview" id = "wrReview3"> As a group, your starting Wide Receivers should be slightly below average. However, if your team were to have a weakness, having it at this position is probably survivable. Based on our projections however, a scoring advantage from this position group on a weekly basis is probably an unlikely proposition. Of the group, we expect <span class = "playerName"></span> to produce solid numbers as your WR<span class = "playerPosition"></span>. On the season, our rankings have him finishing the season as the #<span class = "playerRank"></span> overall wide receiver. </p>
+	<p class = "positionReview" id = "wrReview4"> As a group, your starting Wide Receivers should be below average. This is far from a crippling sentence however, if you have managed to accumulate high-upside players at this position, or very strong options in another position group. Nevertheless, you should be aware that this group has serious holes that could prevent your team from succeeding this season. <span class = "playerName"></span>, your WR<span class = "playerPosition"></span>, is a bright spot for this group. He should put up good numbers, and we project him to finish as the #<span class = "playerRank"></span> overall wide receiver. </p>
+	<p class = "positionReview" id = "wrReview5"> You have good depth at this position. Should any of your starters be forced to miss time, this unit should be more than capable of filling in. </p>
+	<p class = "positionReview" id = "wrReview6"> Your reserves here aren't too impressive. Based on the strength of your starting unit, it might be wise to invest in some more capable backups.</p>
+	<p class = "positionReview" id = "wrReview7"> We believe <span class = "flexName"></span> should serve as a solid flex option for your team. Our projections indicate that he offers the best upside at this position out of all your other options.  </p>
+	<!-- TE Position Group -->	
+		<h2 class = "positionReview" id = "teReview0"> Tight End </h2>
+		<p class = "positionReview" id = "teReview1"> Expect your Tight Ends to dominate. We love the selection of <span class = "playerNameT"></span> to serve as your TE<span class = "playerPositionT"></span>. We expect him to finish the season as the #<span class = "playerRankT"></span> TE. </p>
+		<p class = "positionReview" id = "teReview2"> Good work here. You managed to lock up an excellent option at Tight End. Given that we expect <span class = "playerNameT"></span> to finish the season as the #<span class = "playerRankT"></span> overall tight end, you probably don't need to stress over this position. </p>
+		<p class = "positionReview" id = "teReview3"> Your tight end projects to be slightly below average. Given the lack of proven options after the few elite at this position, this is not really your fault. However, temper your expectations for <span class = "playerNameT"></span> , your projected starter. We have him ranked as our #<span class = "playerRankT"></span> overall tight end. </p>
+		<p class = "positionReview" id = "teReview4"> Your projected starter appears to be a little shaky. While <span class = "playerNameT"></span> should put up decent numbers, we have him projected to finish the season as only the #<span class = "playerRankT"></span> TE. Stashing a backup wouldn't be a bad idea here. </p>
+		<!-- K Position Group -->
+		<h2 class = "positionReview" id = "kReview0"> Kicker </h2>
+		<p class = "positionReview" id = "kReview1"> You have a solid kicker in <span class = "playerNameK"></span>. We have him ranked to finish as #<span class = "playerRankK"></span> at his position. </p>
+		<p class = "positionReview" id = "kReview2"> While <span class = "playerNameK"></span> isn't an elite option, he should prove serviceable. We expect him to finish the season as the #<span class = "playerRankK"></span> kicker. </p>
+		<!-- Defense Position Group -->
+		<h2 class = "positionReview" id = "dReview0"> Defense </h2>
+		<p class = "positionReview" id = "dReview1"> The <span class = "playerNameD"></span> should prove to be a great weakly play. We predict that they will finish as the #<span class = "playerRankD"></span> ranked defensive unit. </p>
+		<p class = "positionReview" id = "dReview2"> The <span class = "playerNameD"></span> don't appear to be a convincing weekly start. We project them to finish as an unimpressive #<span class = "playerRankD"></span> overall DST. You probably will have to stream defenses based on matchups to receive the most consistent production out of this spot. </p>
+	
+
+	
 	
 	
 </body>
