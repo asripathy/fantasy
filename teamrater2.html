@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type = "text/css" rel="stylesheet" href= 		"rater2.css"/>
+		
+		
+	 
+	
+		<title> FantasyStars Homepage</title>
+	</head>
+	<body>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    	<script src="rater.js"></script>
+    
+    	<div id = "menu">
+        	<h1> <a href = "index.html" style="text-decoration:none";>FantasyStars </a></h1> 
+        	<div id = "menu_wrapper">
+            	<ul>
+                	<li><a href = "#"> articles </a>
+                    <ul>
+                        <li> <a href = "qbstart.html">Start-em Sit-em </a> </li>
+                        <li><a href = "waiver.html"> Waiver Wire 
+                        </a> </li>
+                        <li> <a href = "#">Rapid Reaction
+                        </a> </li>
+                    </ul> 
+                </li><li>
+                <a href = "#"> rankings </a>
+                    <ul>
+                        <li> <a href = "qbwrankings.html">
+                        Weekly Rankings </a></li>
+                        <li> <a href = "#">
+                        Rest of Season Rankings </a></li>
+                    </ul>
+                </li><li>
+                <a href = "#"> blog </a> </li><li>
+				<a href = "#"> tools </a> </li><li>
+                <a href = "#" >about us </a> </li>
+            </ul>
+        </div>
+    </div>
+	<div class = "positionReview" id = "wrReview1"> As a group, your starting Wide Receivers are phenomenal. In fact, we believe it will be a major contributing factor to your success in fantasy this season. Our projections believe your starting WRs are all excellent weekly options, and this position should give you very little trouble us the season unfolds. </div>
+	<div class = "positionReview" id = "wrReview2"> As a group, your starting Wide Receivers should be above average. We believe this position group should be a source of strength for your lineup. Our projections indicate that your starters are all more than capable of matching if not outscoring your opponents receivers on a weekly basis. </div>
+	<div class = "positionReview" id = "wrReview3"> As a group, your starting Wide Receivers should be slightly below average. However, if your team were to have a weakness, having it at this position is probably survivable. Based on our projections however, a scoring advantage from this position group on a weekly basis is probably an unlikely proposition. </div>
+	<div class = "positionReview" id = "wrReview4"> As a group, your starting Wide Receivers should be below average. This is far from a crippling sentence however, if you have managed to accumulate either high-upside players at this position, or very strong options in another position group. Nevertheless, you should be aware that this group has serious holes that could prevent your team from succeeding this season. </div>
+	
+	<script>
+	
+	function rateTeam(){
+	//	rateQB();
+	//	rateRB();
+		rateWR();
+	//	rateTE();
+	//	rateK();
+	//	rateD();
+	}
+	function rateWR(){
+		
+		for(var i = 0; i < wrCount; i++){
+			var wrRelativeRank = myWR[i].rank - i*8;
+			wrRating += wrRelativeRank/teamCount; 
+		}
+		wrReview();
+	}
+	function wrReview(){
+		if(wrRating < 0){
+			$('#wrReview1').addClass("activeReview");
+		}
+		else if(wrRating < wrCount*0.5){
+			$('#wrReview2').addClass("activeReview");
+		}
+		else if(wrRating > wrCount*0.5 && wrRating < wrCount){
+			$('#wrReview3').addClass("activeReview");
+		}
+		else if(wrRating > wrCount)
+			$('#wrReview4').addClass("activeReview");
+	}
+	rateTeam();
+	</script>
+</body>
+
+</html> 

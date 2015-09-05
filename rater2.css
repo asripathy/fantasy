@@ -2,19 +2,16 @@ body{
     padding: 0;
     margin: 0;
     overflow-y: scroll;
-    font-family: ‘Verdana’, Helvetica, sans-serif;
-	
+    font-family: Calibri;
 }
 
 #menu{
-    background-color: #FFFFFF ;
-	border-bottom: 2px solid #7d7dff;
+    background-color: #7D1935;
 }
 
 #menu h1 a,visited{
     padding: 18px;
-	color: #7d7dff;
-	
+	color: #FFFFFF;
 }
 
 #menu_wrapper{
@@ -23,7 +20,6 @@ body{
     text-align: right;
     position: relative;
     z-index: 40;
-	margin-right: 60px;
 }
 
 #menu ul{
@@ -39,11 +35,11 @@ body{
 }
 
 #menu ul li:hover{
-    background-color: #FFFFFF;
+    background-color: #4A96AD;
 }
 
 #menu ul li a,visited{
-    color: #7d7dff;
+    color: #F5F3EE;
     display: block;
     padding: 15px;
     text-decoration: none;
@@ -55,7 +51,8 @@ body{
 #menu ul ul{
     display: none;
     position: absolute;
-    background-color: #FFFFFF;
+    background-color: #4A96AD;
+    border: 5px solid #7D1935;
     border-top: 0;
     margin-left: -5px;
 }
@@ -65,39 +62,15 @@ body{
 }
 
 #menu ul ul li a:hover{
-    color:#000066;
-	position: relative;
-	z-index: 2; 
+    color:#2E2EFE;
+}
+.positionReview{
+	display: none;
 }
 
-#table{
-	
-	margin-left: 55px;
-	margin-top: 15px;
-	width: 90%;
-}
-#rankingsHeader{
-	margin-left: 50px;
+.activeReview{
+	display: block;
 }
 
-#rankingsHeader div{
-	display: inline-block;
-	border-radius: 5px;
-	border: 2px solid #6495ED;
-	background-color: #b7b7ff;
-	height: 20px;
-	width: 40px;
-	margin: auto;
-	text-align: center;
-}
 
-#rankingsHeader p{
-	font-size: 20px;
-	
-}
 
-.tier{
-	font-weight: bold;
-	width: 10%;
-	background-color: #b7b7ff;
-}
