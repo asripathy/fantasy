@@ -82,6 +82,9 @@ body{
 #title{
 	text-align: center;
 }
+#date{
+	text-align: center;
+}
 
 #image{
 	display: block;
@@ -92,5 +95,6 @@ body{
 #content{
 	margin-left: 45px;
 	margin-right: 45px;
+	margin-bottom: 25px;
 	margin-top: 25px;
 }
