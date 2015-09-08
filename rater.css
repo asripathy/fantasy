@@ -2,16 +2,19 @@ body{
     padding: 0;
     margin: 0;
     overflow-y: scroll;
-    font-family: Calibri;
+    font-family: ‘Verdana’, Helvetica, sans-serif;
+	
 }
 
 #menu{
-    background-color: #7D1935;
+    background-color: #FFFFFF ;
+	border-bottom: 2px solid #7d7dff;
 }
 
 #menu h1 a,visited{
     padding: 18px;
-	color: #FFFFFF;
+	color: #7d7dff;
+	
 }
 
 #menu_wrapper{
@@ -20,6 +23,7 @@ body{
     text-align: right;
     position: relative;
     z-index: 40;
+	margin-right: 60px;
 }
 
 #menu ul{
@@ -35,11 +39,11 @@ body{
 }
 
 #menu ul li:hover{
-    background-color: #4A96AD;
+    background-color: #FFFFFF;
 }
 
 #menu ul li a,visited{
-    color: #F5F3EE;
+    color: #7d7dff;
     display: block;
     padding: 15px;
     text-decoration: none;
@@ -51,8 +55,7 @@ body{
 #menu ul ul{
     display: none;
     position: absolute;
-    background-color: #4A96AD;
-    border: 5px solid #7D1935;
+    background-color: #FFFFFF;
     border-top: 0;
     margin-left: -5px;
 }
@@ -62,7 +65,9 @@ body{
 }
 
 #menu ul ul li a:hover{
-    color:#2E2EFE;
+    color:#000066;
+	position: relative;
+	z-index: 2; 
 }
 #rankingsHeader{
 	margin-left: 75px;
